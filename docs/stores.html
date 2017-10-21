@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   
+<!-- Mirrored from quiltersrun.com/stores.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Oct 2017 02:10:47 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+      <title>Southern California Quilters Run Participating Stores</title>
+      <link href="cq.css" rel="stylesheet" type="text/css" />
+      <script src="../code.jquery.com/jquery-2.1.3.min.js"></script>
+      <script type="text/javascript">
+
+         function MM_setTextOfLayer(objId,x,newText) { //v9.0
+            with (document) if (getElementById && ((obj=getElementById(objId))!=null))
+               with (obj) innerHTML = unescape(newText);
+         }
+      </script>
+
+      <link rel="stylesheet" href="../cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+      <script src="../cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+      <style>
+         .text-labels {
+            background:#ff8888;
+            border:5px solid rgba(255,255,255,0.5);
+            color:#fff;
+            font-weight:bold;
+            text-align:center;
+            border-radius:50%;
+            line-height:20px;
+            margin-left: -15px !important;
+         }
+      </style>
+
+
+      <script>
+         $( document ).ready(function() {
+            var map = L.map('map_canvas').setView([33.59174327144985, -117.38616943359374], 8);
+            L.tileLayer('../%7bs%7d.tile.osm.org/%7bz%7d/%7bx%7d/%7by%7d.png', { maxZoom: 18 }).addTo(map);
+
+            var qiad_locations = [
+               ["Bolts in the Bathtub",34.697994, -118.142849, "s-boltsinthebathtub.html"],
+               ["Cotton and Chocolate Quilt Co",34.210388, -118.847, "s-cottonandchocolate.html"],
+               ["Quilt Emporium",34.157376, -118.605594, "s-quiltemporium.html"],
+               ["The Sew and Sew",34.138035, -117.86514, "s-thesewnsew.html"],
+               ["Sewn Together",33.9071756,-117.5642186, "s-sewntogether.html"],
+               ["The Quilt Cupboard",33.905205, -117.840523, "s-thequiltcupboard.html"],
+               ["Orange Quilt Bee",33.808789, -117.847104, "s-orangequiltbee.html"],
+               ["Quilters Cocoon",33.909433, -117.450479, "s-quilterscocoon.html"],
+               ["Tops and Bobbins",34.425213, -117.323244, "s-topsandbobbins.html"],
+               ["The Quilters Faire",33.797343, -116.383258, "s-thequiltersfaire.html"],
+               ["Monicas Quilt and Bead Creations",33.758673, -116.306712, "s-monicasquiltandbead.html"],
+               ["Quilters Cottage",33.380921, -117.250613, "q-quilterscottage.html"],
+               ["Fat Quarters Quilt Shop",33.195997, -117.233368, "s-fatquarters.html"],
+               ["Quilt in a Day",33.102715, -117.217677, "s-quiltinaday.html"],
+               ["Inspirations Quilt Shop",33.206446, -117.033428, "s-inspirations.html"],
+               ["Memory Lane Quilt Shop", 32.821198, -116.962361, "#"],
+               ["Cozy Creative Center",32.786664, -116.927932, "s-cozyquiltshop.html"],
+
+            ];
+
+            for (var i = 0; i < qiad_locations.length; i++) {
+              marker = new L.marker([qiad_locations[i][1],qiad_locations[i][2]], { url: qiad_locations[i][3],
+                                                                                   icon: L.divIcon({
+                                                                                      className: 'text-labels',
+                                                                                      html: i + 1,
+                                                                                      iconSize: [20, 20]
+                                                                                   })})
+                  .bindPopup("<b>" + qiad_locations[i][0 ]+ "</b>")
+                  .addTo(map);
+               marker.on('click', onClick);
+               marker.on('mouseover', function (e) {
+                  this.openPopup();
+               });
+               marker.on('mouseout', function (e) {
+                  this.closePopup();
+               });
+
+            }
+            function onClick(e) {
+               window.open(this.options.url);
+            }
+
+         });
+      </script>
+
+   </head>
+   <body>
+      <!--
+<div id="border-top">
+<div align="center"></div>
+</div>
+-->
+<div id="container">
+
+   <ul id="nav">
+      <li class="home"><div align="center"><a href="index.html"><img src="QR/images/map.html" alt="Map" width="595" height="480" /></a></div></li>
+      <li class="stores"><a href="stores.html"></a></li>
+      <li class="prizes"><a href="prizes.html"></a></li>
+   </ul>
+
+
+   <div id="map_canvas" style="margin:auto; width:715px; height:450px;"></div>
+
+   <!-- <div id="main"> </div> -->
+
+
+   <div class="storelist">
+      <ol>
+
+
+         <li><a href="s-boltsinthebathtub.html">Bolts in the Bathub</a><br />
+            723 West Lancaster Boulevard<br />
+            Lancaster, California 93534<br />
+            (661) 945-5541</li>
+
+         <li><a href="s-cottonandchocolate.html">Cotton & Chocolate Quilt Co.</a><br />
+            1724 East Avenida De Los Arboles<br />
+            Thousand Oaks, California 91362<br />
+            (805) 241-0061</li>
+
+         <li><a href="s-quiltemporium.html">Quilt Emporium</a><br />
+            4918 Topanga Canyon Boulevard
+            Woodland Hills, California 91364
+            (818) 704-8238</li>
+
+          <li><a href="s-thesewnsew.html">The Sew n Sew</a><br />
+               160 North Glendora Avenue<br />
+               Glendora, California 91741<br />
+               (626) 852-2223</li>
+
+         <li><a href="s-sewntogether.html">Sewn Together</a><br />
+            1700 Hamner Ave. #112<br />
+            Norco, California 92860<br />
+            (626) 479-5121</li>
+
+         <li><a href="s-thequiltcupboard.html">The Quilt Cupboard</a><br />
+            1243 East Imperial Highway<br>
+            Placentia, CA 92870<br />
+            (714) 993-30919</li>
+
+      </ol>
+   </div>
+
+   <div class="storelist">
+      <ol start="7">
+
+         <li><a href="s-orangequiltbee.html">Orange Quilt Bee</a><br />
+            628 East Katella Avenue<br>
+            Orange, California 92867<br>
+            (714) 639-3245</li>
+
+         <li><a href="s-quilterscocoon.html">Quilter's Cocoon</a><br />
+            9901 Indiana Avenue #104<br />
+            Riverside, California 92503<br />
+            (951) 351-0346</li>
+
+         <li><a href="s-topsandbobbins.html">Tops &amp; Bobbins</a><br />
+            15550 Main Street #6<br />
+            Hesperia, California 92345<br />
+            (760) 881-4025</li>
+
+         <li><a href="s-thequiltersfaire.html">The Quilter's Faire</a><br />
+            34500 Gateway Drive #110<br />
+            Palm Desert, California 92211<br />
+            (760) 328-8737</li>
+
+         <li><a href="s-monicasquiltandbead.html">Monica's Quilt &amp; Bead Creations</a><br />
+            77780 Country Club Drive<br />
+            Palm Desert, California 92211<br />
+            (760) 772-2400</li>
+
+         <li><a href="s-quilterscottage.html">Quilter's Cottage</a><br />
+            131 East Fig Street<br />
+            Fallbrook, California 92028<br />
+            (760) 723-3060</li>
+
+
+      </ol>
+   </div>
+   <div class="storelist">
+      <ol start="13">
+
+         <li><a href="s-fatquarters.html">Fat Quarters Quilt Shop</a><br />
+            728 Civic Center Drive<br />
+            Vista, California 92084<br />
+            (760) 758-8308</li>
+
+         <li><a href="s-quiltinaday.html">Quilt in a Day</a><br />
+            1955 Diamond Street<br />
+            San Marcos, California 92078<br />
+            (760) 591-0929</li>
+
+         <li><a href="s-inspirations.html">Inspirations Quilt Shop</a><br />
+            27350 Valley Center Road #B<br />
+            Valley Center, California 92082<br />
+            (760) 751-9400</li>
+
+         <li><a href="s-memorylanequiltshop.html">Memory Lane Quilt Shop</a><br />
+            1626 N Magnolia Ave<br />
+            El Cajon, California 92020<br />
+            (619) 562-2288</li>
+
+         <li><a href="s-cozyquiltshop.html">Cozy Creative Center</a><br />
+            756 Jamacha Road<br />
+            El Cajon, California 92019<br />
+            (619) 670-0652</li>
+
+      </ol>
+   </div>
+   <div class="break">
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="prize_winners.html">Prize Winners</a></li>
+         <li><a href="cdn-cgi/l/email-protection.html#502735323d3123243522102125393c24393e313431297e333f3d">Webmaster</a></li>
+         <li>&copy; Southern California Quilters Run 2016-17</li>
+      </ul>
+   </div><br />
+</div>
+</div>
+<div id="border-bottom"></div>
+   <script src="../ajax.cloudflare.com/cdn-cgi/scripts/78d64697/cloudflare-static/email-decode.min.js"></script></body>
+
+<!-- Mirrored from quiltersrun.com/stores.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Oct 2017 02:11:05 GMT -->
+</html>
