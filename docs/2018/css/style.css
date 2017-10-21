@@ -20,7 +20,7 @@
 }
 
 body {
-        background: url('../2018/imgs/background.png') no-repeat center #111111; background-attachment:fixed;
+        background: url('http://quiltersrun.com/2018/imgs/background.png') no-repeat center #111111; background-attachment:fixed;
     }
 
 @font-face {
